@@ -22,6 +22,13 @@ Or install it yourself as:
 $ gem install hot_reload_proxy
 ```
 
+## Configuration
+
+```
+HotReloadProxy::Proxy.foreign_host = 'localhost' # Default
+HotReloadProxy::Proxy.foreign_port = '3100'      # Default
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
