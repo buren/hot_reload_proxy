@@ -18,8 +18,8 @@ module HotReloadProxy
     end
 
     def rewrite_env(env)
-      port = HotReloadProxy.port
-      host = HotReloadProxy.host
+      host = HotReloadProxy::Config.host
+      port = HotReloadProxy::Config.port
       env['HTTP_HOST'] = "#{host}:#{port}"
       env
     end
