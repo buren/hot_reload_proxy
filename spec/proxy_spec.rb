@@ -1,30 +1,6 @@
 require 'spec_helper'
 
 describe HotReloadProxy::Proxy do
-  it 'has default host' do
-    expect(described_class::DEFAULT_HOST).to eq('localhost')
-  end
-
-  it 'has default port' do
-    expect(described_class::DEFAULT_PORT).to eq('3100')
-  end
-
-  describe 'class' do
-    after(:each) { described_class.reset! }
-
-    it 'has #foreign_host accessor' do
-      host = 'watman'
-      described_class.foreign_host = host
-      expect(described_class.foreign_host).to eq(host)
-    end
-
-    it 'has #foreign_port accessor and calls #to_s on the argument' do
-      port = 4000
-      described_class.foreign_port = port
-      expect(described_class.foreign_port).to eq('4000')
-    end
-  end
-
   it 'has webpack hot reload file pattern' do
     constant = described_class::WEBPACK_HOT_RELOAD_FILE_PATTERN
     expect(constant).to eq('.hot-update.')
@@ -84,7 +60,7 @@ describe HotReloadProxy::Proxy do
 
       it 'does call super when it should proxy' do
         proxy = described_class.new(nil)
-        expect(proxy.call({})).to eq("rack proxy override")
+        expect(proxy.call({})).to eq('rack proxy override')
       end
     end
   end

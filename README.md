@@ -22,11 +22,15 @@ Or install it yourself as:
 $ gem install hot_reload_proxy
 ```
 
+__Rails__: No other configuration is needed
+
+__Non-Rails__:  If you are not using Rails you'll need to add the `HotReloadProxy::Proxy` proxy to the middleware stack manually.
+
 ## Configuration
 
 ```
-HotReloadProxy::Proxy.foreign_host = 'localhost' # Default
-HotReloadProxy::Proxy.foreign_port = '3100'      # Default
+HotReloadProxy.host = 'localhost' # Default
+HotReloadProxy.port = '3100'      # Default
 ```
 
 ## Development
