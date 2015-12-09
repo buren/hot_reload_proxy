@@ -25,7 +25,7 @@ describe HotReloadProxy::Proxy do
     # Overriding the Rack::Proxy#call (not very pretty..)
     module Rack
       class Proxy
-        def call(enc)
+        def call(_env)
           'rack proxy override'
         end
       end
